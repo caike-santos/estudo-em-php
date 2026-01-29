@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../_css/estilo.css"/>
+  <meta charset="UTF-8"/>
+  <title>modelo</title>
+</head>
+<body>
+<div>
+   <form action="cor.php" method="get">
+        <label for="itexto">Digite o texto:</label>
+        <input type="text" name="texto" id="itexto" required>
+        <br>
+        <label for="itam">Tamanho:</label>
+        <select name="tam" id="itam">
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="30px">30px</option>
+            <option value="40px">40px</option>
+        </select>
+        <br>
+        <label for="icor">Cor:</label>
+        <input type="color" name="cor" id="icor">
+        <br>
+        <input type="submit" value="editar">
+   </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../_css/estilo.css"/>
+  <meta charset="UTF-8"/>
+  <title>insira</title>
+</head>
+<body>
+<div>
+   <form action="dados.php" method="post">
+    <label for="inome">Nome:</label>
+    <input type="text" name="nome" id="inome" required>
+    <br>
+    <label for="iano">Ano de nascimento:</label>
+    <input type="number" name="ano" id="iano" required>
+    <fieldset>
+        <legend>sexo</legend>
+    <input type="radio" name="sexo" id="imasc" checked value="m">
+    <label for="imasc">Masculino</label>
+    
+    <br>
+    <input type="radio" name="sexo" id="ifem" value="f">
+    <label for="ifem">Feminino</label>
+    
+    </fieldset>
+    <input type="submit" value="cadastrar">
+   </form>
+</div>
+</body>
+</html>
