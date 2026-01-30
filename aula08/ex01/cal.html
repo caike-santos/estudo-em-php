@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../_css/estilo.css"/>
+  <meta charset="UTF-8"/>
+  <title>modelo</title>
+</head>
+<body>
+<div>
+    <form action="operaçao.php" method="post">
+        <label for="in1">Escolha um numero:</label>
+        <input type="number" name="n1" id="in1" required>
+        <fieldset>
+            <legend>Operaçoes</legend>
+            <input type="radio" name="op" id="dobro" checked value="1">
+            <label for="dobro">dobro</label>
+            <input type="radio" name="op" id="cubo" value="2">
+            <label for="cubo">cubo</label>
+            <input type="radio" name="op" id="raiz" value="3">
+            <label for="raiz">raiz quadrada</label>
+        </fieldset>
+        <input type="submit" value="Calcular">
+    </form>
+</div>
+</body>
+</html>
