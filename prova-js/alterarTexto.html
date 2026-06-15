@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Alterar Pergunta de Texto</title>
+</head>
+<body>
+<div>
+    <form id="formProcurar">
+        <h5>Procurar alternativas</h5>
+        Id: <input type="number" name="id" required>
+        <br><br>
+        <input type="submit" value="Procurar">
+        <p id="msgBusca" style="color: red;"></p>
+    </form>
+    <br>
+    
+    <form id="formAlterar" style="display: none;">
+        Id: <input type="number" name="id" id="editId" required readonly>
+        <br><br>
+        Pergunta: <input type="text" name="pergunta" id="editPergunta" required>
+        <br><br>    
+        Resposta Correta: <textarea name="respostaCorreta" id="editResposta"></textarea>
+        <br><br>
+        <input type="submit" value="Alterar">
+        <p id="msgAlterar" style="font-weight: bold;"></p>
+    </form>
+
+    <br>
+    <button type="button" onclick="location.href='menu.html'">Voltar ao Menu</button>
+</div>
+
+<script>
+    document.getElementById('formProcurar').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        formData.append('acao', 'buscar');
+        const msgBusca = document.getElementById('msgBusca');
+        msgBusca.textContent = 'Buscando...';
+
+        fetch('api_alterarTexto.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.sucesso) {
+                msgBusca.textContent = '';
+                document.getElementById('formAlterar').style.display = 'block';
+                document.getElementById('editId').value = data.id;
+                document.getElementById('editPergunta').value = data.pergunta;
+                document.getElementById('editResposta').value = data.respostaCorreta;
+            } else {
+                msgBusca.textContent = data.mensagem;
+                document.getElementById('formAlterar').style.display = 'none';
+            }
+        })
+        .catch(() => {
+            msgBusca.textContent = "Erro na requisição.";
+        });
+    });
+
+    document.getElementById('formAlterar').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        formData.append('acao', 'alterar');
+        const msgAlterar = document.getElementById('msgAlterar');
+        msgAlterar.textContent = 'Salvando...';
+
+        fetch('api_alterarTexto.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            msgAlterar.textContent = data.mensagem;
+            msgAlterar.style.color = data.sucesso ? 'green' : 'red';
+        })
+        .catch(() => {
+            msgAlterar.textContent = "Erro na requisição.";
+            msgAlterar.style.color = 'red';
+        });
+    });
+</script>
+</body>
+</html>

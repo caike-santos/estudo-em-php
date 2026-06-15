@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Criar Pergunta de Texto</title>
+</head>
+<body>
+<div>
+    <h1>Criar Nova Pergunta</h1>
+
+    <form id="formCriarTexto">
+        Id: <input type="number" name="id" required>
+        Pergunta: <input type="text" name="pergunta" required>
+        <br><br>
+        Resposta: <textarea name="resposta" id="iresposta" required></textarea>
+        <input type="submit" value="Criar Pergunta">
+    </form>
+
+    <p id="mensagem" style="font-weight: bold; margin-top: 10px;"></p>
+    <button type="button" onclick="location.href='menu.html'">Voltar ao Menu</button>
+</div>
+
+<script>
+    document.getElementById('formCriarTexto').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        const pMensagem = document.getElementById('mensagem');
+        
+        pMensagem.textContent = 'Processando...';
+        pMensagem.style.color = 'black';
+
+        fetch('api_criarTexto.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            pMensagem.textContent = data.mensagem;
+            if(data.sucesso) {
+                pMensagem.style.color = 'green';
+                document.getElementById('formCriarTexto').reset();
+            } else {
+                pMensagem.style.color = 'red';
+            }
+        })
+        .catch(error => {
+            pMensagem.textContent = "Erro na requisição.";
+            pMensagem.style.color = 'red';
+        });
+    });
+</script>
+</body>
+</html>

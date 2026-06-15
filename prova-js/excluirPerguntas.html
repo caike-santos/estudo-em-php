@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Perguntas</title>
+</head>
+<body>
+    <div>
+        <h5>Excluir Pergunta</h5>
+        <form id="formExcluir">
+            Pergunta: <input type="text" name="pergunta" required>
+            <input type="submit" value="Excluir pergunta com alternativas" name="btn_alternativas">
+            <input type="submit" value="Excluir pergunta de texto" name="btn_texto">
+        </form>
+        <p id="mensagem" style="font-weight: bold; margin-top: 10px;"></p>
+        <button type="button" onclick="location.href='menu.html'">Voltar ao Menu</button>
+    </div>
+
+    <script>
+        document.getElementById('formExcluir').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            formData.append('tipo_exclusao', event.submitter.name);
+
+            const pMensagem = document.getElementById('mensagem');
+            pMensagem.textContent = 'Processando...';
+            pMensagem.style.color = 'black';
+
+            fetch('api_excluirPerguntas.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                pMensagem.textContent = data.mensagem;
+                if(data.sucesso) {
+                    pMensagem.style.color = 'green';
+                    document.getElementById('formExcluir').reset();
+                } else {
+                    pMensagem.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                pMensagem.textContent = "Erro na requisição.";
+                pMensagem.style.color = 'red';
+            });
+        });
+    </script>
+</body>
+</html>
