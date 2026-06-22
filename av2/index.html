@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Beauty Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Aura Beauty Studio Logo" class="logo-img">
+        </div>
+        
+        <nav class="nav-links" id="nav-logged-out">
+            <a href="#profissionais">Profissionais</a>
+            <a href="#planos">Planos</a>
+            <a href="cadastro.html">Cadastre-se</a>
+            <a href="#" id="loginBtn">Login</a>
+            <button class="btn-agendar">Agendar Agora</button>
+        </nav>
+
+        <nav class="nav-links nav-logged-in" id="nav-logged-in" style="display: none;">
+            <a href="#profissionais">Profissionais</a>
+            <a href="#planos">Planos</a>
+            <span class="info-destaque">Pontos Aura: <strong id="userPontos">0</strong></span>
+            <span class="info-texto">Olá, <strong id="userNameDisplay">...</strong></span>
+            <a href="#" class="link-conta"><span class="icon-user">👤</span> Minha conta</a>
+            <a href="#" id="logoutBtn" class="link-sair">Sair da conta</a>
+            <button class="btn-agendar">Agendar Agora</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image-container">
+                <img src="imagens/Gemini_Generated_Image_k0kwiqk0kwiqk0kw.png" alt="Imagem do Salão" class="hero-bg">
+                <div class="hero-content">
+                    <h1>Beleza e bem-estar em cada detalhe</h1>
+                    <button class="btn-agendar">Agendar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="profissionais" class="profissionais-section">
+            <h2>Conheça Nossos Profissionais</h2>
+            <div class="grid-profissionais">
+                <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome da Profissional</h3>
+                        <p class="cargo">Manicure</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+                <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome da Profissional</h3>
+                        <p class="cargo">Cabeleireira</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+                <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome do Profissional</h3>
+                        <p class="cargo">Maquiador</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+                 <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome do Profissional</h3>
+                        <p class="cargo">Esteticista</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+                 <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome da Profissional</h3>
+                        <p class="cargo">Massagista</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+                 <div class="card-profissional">
+                    <img src="" alt="Foto Profissional" class="foto-profissional">
+                    <div class="info-profissional">
+                        <h3>Nome da Profissional</h3>
+                        <p class="cargo">Designer de Sobrancelhas</p>
+                        <div class="estrelas">★★★★★</div>
+                        <p class="descricao">Breve descrição sobre a experiência e o trabalho da profissional no estúdio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planos" class="planos-section">
+            <h2>Nossos Planos e Pacotes</h2>
+            <div class="grid-planos">
+                <div class="card-plano">
+                    <h3>Pacote Básico</h3>
+                    <p class="ideal-para">Ideal para manter a beleza em dia.</p>
+                    <ul class="servicos-inclusos">
+                        <li>Corte e Escova</li>
+                        <li>Manicure e Pedicure</li>
+                        <li>Design de Sobrancelha</li>
+                    </ul>
+                    <p class="preco">R$ 150,00</p>
+                    <button class="btn-agendar-plano">Agendar Plano</button>
+                </div>
+                <div class="card-plano">
+                    <h3>Dia de Noiva</h3>
+                    <p class="ideal-para">O tratamento ideal para brilhar no seu dia.</p>
+                    <ul class="servicos-inclusos">
+                        <li>Penteado e Maquiagem</li>
+                        <li>Limpeza de Pele</li>
+                        <li>Massagem Relaxante</li>
+                    </ul>
+                    <p class="preco">R$ 450,00</p>
+                    <button class="btn-agendar-plano">Agendar Plano</button>
+                </div>
+                <div class="card-plano">
+                    <h3>Renovação Total</h3>
+                    <p class="ideal-para">Ideal para repaginar o visual completo.</p>
+                    <ul class="servicos-inclusos">
+                        <li>Mechas e Tratamento</li>
+                        <li>Corte Bordado</li>
+                        <li>Spa dos Pés</li>
+                    </ul>
+                    <p class="preco">R$ 380,00</p>
+                    <button class="btn-agendar-plano">Agendar Plano</button>
+                </div>
+                <div class="card-plano">
+                    <h3>Pacote Mensal</h3>
+                    <p class="ideal-para">Acesso contínuo aos melhores serviços.</p>
+                    <ul class="servicos-inclusos">
+                        <li>4x Manicure</li>
+                        <li>2x Escova</li>
+                        <li>1x Hidratação Profunda</li>
+                    </ul>
+                    <p class="preco">R$ 290,00</p>
+                    <button class="btn-agendar-plano">Agendar Plano</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Nosso Endereço</h4>
+                <p>Rua Exemplo de Estúdio, 123</p>
+                <p>Bairro da Beleza - Cidade/UF</p>
+                <p>CEP: 00000-000</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>Tel: (11) 99999-9999</p>
+                <p>Email: contato@aurabeauty.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <div class="redes-icons">
+                    <img src="" alt="Instagram" class="icon-social">
+                    <img src="" alt="Facebook" class="icon-social">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aura Beauty Studio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="Digite seu e-mail">
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn-login-submit">Entrar</button>
+                <p class="modal-footer-text">Ainda não tem conta? <a href="#cadastro">Cadastre-se</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
