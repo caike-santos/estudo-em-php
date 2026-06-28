@@ -17,6 +17,33 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// --- LÓGICA DO BOTÃO "AGENDAR AGORA" ---
+
+// Seleciona todos os botões de agendar que existem na página
+const botoesAgendar = document.querySelectorAll('.btn-agendar');
+
+// Adiciona o evento de clique a cada um deles
+botoesAgendar.forEach(botao => {
+    botao.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita que a página recarregue
+
+        // Verifica se existe um usuário salvo no localStorage (se está logado)
+        const usuarioLogado = localStorage.getItem('aura_usuario');
+
+        if (usuarioLogado) {
+            // Se estiver logado, redireciona para a página de agendamento
+            window.location.href = 'agendamento.html'; 
+        } else {
+            // Se NÃO estiver logado, abre o modal de login
+            alert('Por favor, faça login na sua conta para agendar um horário.');
+            const loginModal = document.getElementById('loginModal');
+            if (loginModal) {
+                loginModal.style.display = 'flex';
+            }
+        }
+    });
+});
+
 function verificarEstadoLogin() {
     const usuarioSalvo = localStorage.getItem('aura_usuario');
 

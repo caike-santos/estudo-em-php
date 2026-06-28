@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar</title>
+    <link rel="stylesheet" href="style-agendamento.css">
+</head>
+<body>
+    <div class="top-bar-agendamento">
+    <a href="javascript:history.back()" class="btn-voltar-novo">
+        <div class="circulo-voltar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        Voltar
+    </a>
+    
+    <h2 class="titulo-agendamento-novo">Escolha seus serviços</h2>
+</div>
+    <div class="resumo-bar">
+    <div class="resumo-item">
+        <strong>Total:</strong> R$ <span id="totalPreco">0,00</span>
+    </div>
+    <div class="resumo-item">
+        <strong>Tempo:</strong> <span id="totalTempo">0</span> min
+    </div>
+    <div class="resumo-item">
+        <span id="resumoServicos">Nenhum serviço selecionado</span>
+    </div>
+</div>
+
+<div id="lista-servicos" class="grid-servicos">
+    </div>
+
+<div class="rodape-agendamento">
+    <button id="btnContinuar" class="btn-continuar" disabled>Continuar</button>
+</div>
+<script src="script-agendamento.js"></script>
+</body>
+</html>

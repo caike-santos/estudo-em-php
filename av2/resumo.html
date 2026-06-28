@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo do Pedido - Aura Beauty</title>
+    <link rel="stylesheet" href="style-agendamento.css">
+</head>
+<body>
+
+    <div class="top-bar-agendamento">
+        <a href="javascript:history.back()" class="btn-voltar-novo">
+            <div class="circulo-voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            Voltar
+        </a>
+    </div>
+
+    <div class="caixa-resumo">
+        <h3 class="titulo-secao-resumo">Resumo do Pedido</h3>
+        <div class="linha-resumo">
+            <strong>Serviço(s):</strong> <span id="resumoServicos">...</span>
+        </div>
+        <div class="linha-resumo">
+            <strong>Profissional:</strong> <span id="resumoProfissional">...</span>
+        </div>
+        <div class="linha-resumo">
+            <strong>Data e Hora:</strong> <span id="resumoData">...</span> às <span id="resumoHora">...</span>
+        </div>
+        <div class="linha-resumo">
+            <strong>Duração Total:</strong> <span id="resumoDuracao">...</span> min
+        </div>
+        <div class="linha-resumo destaque-preco">
+            <strong>Preço Total:</strong> R$ <span id="resumoPreco">...</span>
+            <span class="desconto-texto">Desconto de 15% aplicado!</span>
+        </div>
+    </div>
+
+    <div class="caixa-presente">
+        <label class="checkbox-presente">
+            <input type="checkbox" id="checkPresente"> Este agendamento é para outra pessoa?
+        </label>
+        
+        <div id="campo-presenteado" style="display: none;">
+            <label>Nome completo do presenteado</label>
+            <input type="text" id="nomePresenteado" placeholder="Digite o nome de quem vai receber o serviço">
+        </div>
+    </div>
+
+    <div class="caixa-pagamento">
+        <h3 class="titulo-secao-resumo">Forma de Pagamento</h3>
+        
+        <div class="opcoes-pagamento">
+            <label>
+                <input type="radio" name="pagamento" value="cartao" checked> Cartão de Crédito
+            </label>
+            <label>
+                <input type="radio" name="pagamento" value="pix"> Pix
+            </label>
+        </div>
+
+        <div id="form-cartao" class="form-cartao">
+            <div class="campo-input">
+                <label>Número do Cartão</label>
+                <input type="text" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="campo-input">
+                <label>Nome no Cartão</label>
+                <input type="text" placeholder="Nome impresso no cartão">
+            </div>
+            <div class="linha-input-duplo">
+                <div class="campo-input">
+                    <label>Validade (MM/AA)</label>
+                    <input type="text" placeholder="MM/AA">
+                </div>
+                <div class="campo-input">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+        </div>
+
+        <div id="secao-pix" class="secao-pix" style="display: none;">
+            <img src="imagens/Captura de tela 2026-06-28 175630.png" alt="QR Code PIX" class="qrcode-img">
+            <h4>Copie o código PIX abaixo</h4>
+            <p class="codigo-pix">
+                00020126360014br.gov.bcb.pix0114+552198765432<br>
+                1520400005303986540580.005802BR5913Aura<br>
+                Studio6009RIO DE JANEIRO62070503***6304E3B7
+            </p>
+        </div>
+    </div>
+
+    <div class="caixa-politicas">
+        <h4>Política de Cancelamento</h4>
+        <p>Até 48hrs antes da data do agendamento, o cancelamento é gratuito.</p>
+        <p>Cancelamentos em prazo menor sofrerão multa referente a 50% do valor restante que será debitado na sua conta para uso em nova visita.</p>
+        
+        <label class="checkbox-termos">
+            <input type="checkbox" id="checkTermos"> Li e aceito.
+        </label>
+
+        <button id="btnConfirmarPagar" class="btn-continuar" disabled>Confirmar e Pagar</button>
+    </div>
+
+    <script src="script-resumo.js"></script>
+</body>
+</html>

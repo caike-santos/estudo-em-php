@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o Profissional - Aura Beauty</title>
+    <link rel="stylesheet" href="style-agendamento.css">
+</head>
+<body>
+
+    <div class="top-bar-agendamento">
+        <a href="javascript:history.back()" class="btn-voltar-novo">
+            <div class="circulo-voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            Voltar
+        </a>
+        <h2 class="titulo-agendamento-novo">Escolha Profissional, Data e Horário</h2>
+    </div>
+
+    <div class="opcoes-profissional-container">
+        <button id="btnQualquer" class="btn-opcao-prof">Qualquer profissional disponível</button>
+        <button id="btnEscolher" class="btn-opcao-prof">Quero escolher um profissional</button>
+    </div>
+
+    <div id="lista-profissionais" class="grid-profissionais" style="display: none;">
+        </div>
+
+    <div id="secao-data-hora" class="secao-data-hora" style="display: none;">
+        <div class="campo-data">
+            <label for="dataAgendamento">Escolha a Data:</label>
+            <input type="date" id="dataAgendamento">
+        </div>
+        <div class="campo-hora">
+            <label for="horaAgendamento">Escolha o Horário:</label>
+            <input type="time" id="horaAgendamento">
+        </div>
+    </div>
+
+    <div class="rodape-agendamento">
+        <button id="btnContinuarProf" class="btn-continuar" disabled>Continuar</button>
+    </div>
+
+    <script src="script-profissional.js"></script>
+</body>
+</html>

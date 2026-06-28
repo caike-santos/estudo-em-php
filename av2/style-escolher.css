@@ -1,0 +1,118 @@
+/* =========================================
+   TELA ESCOLHA DE PROFISSIONAL E DATA
+   ========================================= */
+
+/* Botões Iniciais */
+:root {
+    --cor-fundo: #FAECEB;
+    --cor-fundo-branco: #FFFFFF;
+    --cor-titulos: #4A3333;
+    --cor-texto: #555555;
+    --cor-borda: #DBCACA;
+    --cor-botao-cinza: #7A7A7A;
+    --cor-botao-cinza-hover: #5A5A5A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.opcoes-profissional-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 20px;
+}
+
+.btn-opcao-prof {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-opcao-prof:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.btn-opcao-prof.ativo {
+    background-color: var(--cor-primaria-hover);
+    border: 2px solid #333;
+    transform: scale(1.05); /* Dá um pequeno destaque no botão selecionado */
+}
+
+/* Grid de Profissionais */
+.grid-profissionais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+}
+
+.prof-card {
+    background-color: var(--cor-fundo-branco);
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.prof-card:hover {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 4px 10px rgba(183, 110, 121, 0.2);
+}
+
+.prof-card.selecionado {
+    border: 2px solid var(--cor-primaria);
+    background-color: #fcf5f5;
+}
+
+.prof-card h4 {
+    margin: 10px 0 5px 0;
+    color: var(--cor-titulos);
+}
+
+.prof-card p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--cor-texto);
+}
+
+/* Data e Hora */
+.secao-data-hora {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto 60px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: var(--cor-fundo-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+}
+
+.secao-data-hora label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-titulos);
+    font-weight: bold;
+}
+
+.secao-data-hora input {
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+}

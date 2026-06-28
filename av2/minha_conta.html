@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Aura Beauty</title>
+    <link rel="stylesheet" href="style-agendamento.css">
+</head>
+<body>
+
+    <div class="top-bar-agendamento">
+        <a href="index.html" class="btn-voltar-novo">
+            <div class="circulo-voltar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            Voltar
+        </a>
+        <h2 class="titulo-agendamento-novo" style="border: none;">Minha Conta</h2>
+    </div>
+
+    <div class="menu-abas">
+        <button class="btn-aba ativo" data-aba="agendamentos">Meus Agendamentos</button>
+        <button class="btn-aba" data-aba="pontos">Pontos Aura</button>
+        <button class="btn-aba" data-aba="historico">Histórico</button>
+        <button class="btn-aba" data-aba="dados">Meus Dados</button>
+    </div>
+
+    <div id="conteudo-aba" class="conteudo-aba-container">
+        <p class="mensagem-carregando">Carregando informações...</p>
+    </div>
+
+    <footer class="rodape-padrao">
+        </footer>
+
+    <script src="script-conta.js"></script>
+</body>
+</html>
